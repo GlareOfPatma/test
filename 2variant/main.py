@@ -13,4 +13,6 @@ anomaly_wagon = data.apply(max, axis=0).idxmax()
 # Выбор даты с аномальной температурой
 anomaly_date = df.loc[data[anomaly_wagon].idxmax(), 'Дата']
 result = pd.DataFrame({'Вагон': [anomaly_wagon], 'Дата': [anomaly_date]})
-print(result)
+answ = result.to_string()
+answer = open("answer.txt", "w+")
+answer.write(answ)
